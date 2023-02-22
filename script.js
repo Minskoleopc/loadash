@@ -137,22 +137,137 @@ console.log(e6)
 
 let ll = [33,44,55,66,33,45,66,77,3,545,66,77,88,33,55,66]
 console.log(_.pull(ll,33,44))
-
-
-console.log(_.pull(firstName,'{age:24}'))
-
-
-
-
-
-
-
-
-
-
+//console.log(_.pull(firstName,'{age:24}'))
 // let a = [22,33,44,5555,66,77,888,921,444,55,66,77,888]
 // a.sort()
 // console.log(a)
+
+let num = [44,55,66,77,88,99]
+console.log(_.take(num,3))
+//_.takeRight
+console.log(_.takeRight(num,3))
+
+console.log(_.takeWhile(num ,function(n){
+    return n < 60
+}))
+console.log(_.takeRightWhile(num ,function(n){
+    return n > 60
+}))
+
+// partition
+let numbersB = [55,66,77,88,55,66,77,-55,22,-66,-77,-88,-99,22]
+let [negative,positive] = _.partition(numbersB,function(n){
+    return n < 0
+})
+console.log(negative)
+console.log(positive)
+
+// reduce
+
+let r = 2==2 || 0
+console.log(r)
+
+
+let numberC = [44,55,66,77]
+
+
+let q  = _.reduce(numberC,function(acc,el){
+    return acc + el
+},90)
+console.log(q)
+
+let colors = ["red","green","green","black","green","black"]
+let ra = {}
+
+for(let i = 0 ; i < colors.length ; i++){
+    ra[colors[i]] = (ra[colors[i]]||0)+1
+}
+console.log(ra)
+
+let r22 = _.reduce(colors,function(acc,el){
+    acc[el] = (acc[el]||0) + 1
+    return acc
+},{})
+console.log(r22)
+
+
+// ---------------- reduce --------------------------
+
+let users = 
+[
+    {
+        fullName:"chinmay deshpande",
+        job:"tester"
+    },
+    {
+        fullName:"poorva vyas",
+        job:"developer"
+    },
+    {
+        fullName:"amol rao",
+        job:"admin"
+    },
+    {
+        fullName:"mayuri rao",
+        job:"admin"
+    },
+    {
+        fullName:"satendra rai",
+        job:"developer"
+    },
+    {
+        fullName:"ayush jain",
+        job:"developer"
+    }
+
+]
+
+// 
+// {
+//     tester:[
+//         {
+//             fullName:"chinmay deshpande",job:"tester"
+//         }
+
+//     ]
+// }
+
+let namesC = ["ram","laxman rao","satish"]
+// console.log(_.map(namesC,function(el){
+//     return el.toUpperCase()
+// }))
+console.log(_.map(namesC,_.upperCase))
+console.log(_.map(namesC,_.lowerCase))
+console.log(_.map(namesC,_.camelCase))
+console.log(_.map(namesC,_.capitalize))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
