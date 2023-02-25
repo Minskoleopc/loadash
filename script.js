@@ -242,8 +242,53 @@ console.log(_.map(namesC,_.camelCase))
 console.log(_.map(namesC,_.capitalize))
 
 
+let arrays = ["tank","boy","hemant","rakesh","ramesh"]
 
+// arrays.forEach(function(e){
+//     if(e.startsWith('h')){
+//         console.log(e)
+//     }
+// })
 
+// arrays.forEach(function(e){
+//     if(_.startsWith(e,'h')){
+//         console.log(e)
+//     }
+// })
+
+arrays.forEach(function(e){
+    console.log(_.padStart(e,10,'-'))
+})
+
+arrays.forEach(function(e){
+    console.log(_.padEnd(e,20,'-'))
+})
+
+let city2 = " pune ";
+_.trimStart(city2)
+_.trimEnd(city2)
+_.trim(city2)
+
+let info = {
+    firstName:"chinmay",
+    lastname:"deshpande",
+    age:34,
+    rollNo:45
+}
+
+console.log(_.keys(info))
+console.log(_.values(info))
+console.log(_.pick(info,'firstName'))
+
+_.set(info,"city","pune")
+console.log(_.get(info,"city"))
+console.log(info)
+
+_.forIn(info,function(k,v){
+    console.log(k,v)
+})
+
+// Monday ------>8pm
 
 
 
